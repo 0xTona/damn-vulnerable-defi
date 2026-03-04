@@ -23,7 +23,7 @@
 - [x] [puppet-v2](src/puppet-v2/write-up.md)
 - [x] [free-rider](src/free-rider/write-up.md)
 - [x] [backdoor](src/backdoor/write-up.md)
-- [ ] climber
+- [x] [climber](src/climber/write-up.md)
 - [ ] wallet-mining
 - [ ] puppet-v3
 - [ ] abi-smuggling
