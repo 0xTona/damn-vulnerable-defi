@@ -26,7 +26,7 @@
 - [x] [climber](src/climber/write-up.md)
 - [ ] wallet-mining
 - [ ] puppet-v3
-- [ ] abi-smuggling
+- [x] [abi-smuggling](src/abi-smuggling/write-up.md)
 - [ ] shards
 - [ ] curvy-puppet
 - [ ] withdrawal
