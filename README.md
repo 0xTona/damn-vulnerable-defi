@@ -12,7 +12,7 @@
 
 ## Progress
 
-- [x] [unstoppable](src/unstoppable/write-up.md)
+- [x] [unstoppable](src/unstoppable/write-up)
 - [x] [naive-receiver](src/naive-receiver/write-up.md)
 - [x] [truster](src/truster/write-up.md)
 - [x] [side-entrance](src/side-entrance/write-up.md)
