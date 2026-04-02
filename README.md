@@ -18,13 +18,13 @@
 - [x] [side-entrance](src/side-entrance/write-up.md)
 - [x] [the-rewarder](src/the-rewarder/write-up.md)
 - [x] [selfie](src/selfie/write-up.md)
-- [ ] compromised
+- [ ] ~~compromised~~
 - [x] [puppet](src/puppet/write-up.md)
 - [x] [puppet-v2](src/puppet-v2/write-up.md)
 - [x] [free-rider](src/free-rider/write-up.md)
 - [x] [backdoor](src/backdoor/write-up.md)
 - [x] [climber](src/climber/write-up.md)
-- [ ] wallet-mining
+- [ ] ~~wallet-mining~~
 - [ ] puppet-v3
 - [x] [abi-smuggling](src/abi-smuggling/write-up.md)
 - [ ] shards
