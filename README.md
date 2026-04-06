@@ -27,6 +27,6 @@
 - [ ] ~~wallet-mining~~
 - [ ] puppet-v3
 - [x] [abi-smuggling](src/abi-smuggling/write-up.md)
-- [ ] shards
+- [x] [shards](src/shards/write-up.md)
 - [ ] curvy-puppet
 - [ ] withdrawal
