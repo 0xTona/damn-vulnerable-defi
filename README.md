@@ -29,4 +29,4 @@
 - [x] [abi-smuggling](src/abi-smuggling/write-up.md)
 - [x] [shards](src/shards/write-up.md)
 - [ ] curvy-puppet
-- [ ] withdrawal
+- [x] [withdrawal](src/withdrawal/write-up.md)
